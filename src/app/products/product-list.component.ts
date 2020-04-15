@@ -9,12 +9,21 @@ import { ProductService } from './product.service';
 })
 export class ProductListComponent implements OnInit {
   pageTitle: string = 'Product List';
-  listFilter: string;
   showImage: boolean;
 
   imageWidth: number = 50;
   imageMargin: number = 2;
   errorMessage: string;
+
+  private _listFilter: string;
+
+  public set listFilter(v: string) {
+    this._listFilter = v;
+    this.performFilter(this._listFilter);
+  }
+  public get listFilter(): string {
+    return this._listFilter;
+  }
 
   filteredProducts: IProduct[];
   products: IProduct[];
@@ -29,11 +38,6 @@ export class ProductListComponent implements OnInit {
       },
       error: (err) => (this.errorMessage = err),
     });
-  }
-
-  onFilterChange(filter: string) {
-    this.listFilter = filter;
-    this.performFilter(filter);
   }
 
   toggleImage(): void {
