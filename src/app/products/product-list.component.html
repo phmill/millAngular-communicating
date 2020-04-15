@@ -8,7 +8,11 @@
     <div class="row">
       <div class="col-md-2">Filter by:</div>
       <div class="col-md-4">
-        <input type="text" [(ngModel)]="listFilter" />
+        <input
+          type="text"
+          [ngModel]="listFilter"
+          (ngModelChange)="onFilterChange($event)"
+        />
       </div>
     </div>
     <div class="row" [hidden]="!listFilter">
@@ -18,7 +22,7 @@
     </div>
 
     <div class="table-responsive">
-      <table class="table mb-0" *ngIf="products && products.length">
+      <table class="table mb-0" *ngIf="products?.length">
         <thead>
           <tr>
             <th>
