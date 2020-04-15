@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "Angular-MillCommunication"
+    }
+  },
+  "defaultProject": "Angular-MillCommunication",
+  "cli": {
+    "analytics": "4e9fcf5c-d1e8-4ce6-8c47-5b74135c7cb9"
+  }
 }
