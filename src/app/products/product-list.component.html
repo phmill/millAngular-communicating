@@ -11,9 +11,9 @@
         class="col-md-10"
         [displayDetail]="includeDetail"
         [hitCount]="filteredProducts?.length"
+        (valueChange)="onValueChange($event)"
       >
       </pm-criteria>
-      {{ filterCriteria.listFilter }}
     </div>
     <div class="table-responsive">
       <table class="table mb-0" *ngIf="products?.length">
