@@ -16,7 +16,7 @@ export class ProductService {
   private productsUrl = 'api/products';
   private products: IProduct[];
 
-  private selectedProductSource = new Subject<IProduct>();
+  private selectedProductSource = new BehaviorSubject<IProduct>(null);
   selectedProductChange$ = this.selectedProductSource.asObservable();
 
   constructor(private http: HttpClient) {}
